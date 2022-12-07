@@ -1,0 +1,83 @@
+﻿@model IEnumerable<appli_gest_assoc.Models.Membre>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Matricule
+            </th>
+            <th>
+                Prénom
+            </th>
+            <th>
+                Nom
+            </th>
+            <th>
+                Sexe
+            </th>
+            <th>
+                date de naissance
+            </th>
+            <th>
+                Lieu de naissance
+            </th>
+            <th>
+                Télephone
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Adresse
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdMembre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrenomMembre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomMembre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sexe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateNaiss)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LieuNaiss)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adresse)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdMembre">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdMembre">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdMembre">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,54 @@
+﻿@model appli_gest_assoc.Models.MembreBureau
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>MembreBureau</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Bureau
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Bureau.NomBureau)
+        </dd>
+        <dt class = "col-sm-2">
+            Matricule
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Membre.IdMembre)
+        </dd>
+        <dt class = "col-sm-2">
+            Prénom
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Membre.PrenomMembre)
+        </dd>
+        <dt class = "col-sm-2">
+            Nom
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Membre.NomMembre)
+        </dd>
+        <dt class = "col-sm-2">
+            Poste
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Poste)
+        </dd>
+        <dt class = "col-sm-2">
+            Date de création
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DateCreation)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdMembreBureau">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
